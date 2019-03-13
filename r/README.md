@@ -1,4 +1,4 @@
-# Research Computing Services R Examples and Tutorial Sources
+# R Examples and Tutorial Sources
 
 ## Directory Structure
 
