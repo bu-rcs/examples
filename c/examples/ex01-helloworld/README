@@ -1,0 +1,27 @@
+This directory contains an example of C program : helloWorld.c
+
+
+Program Compilation:
+--------------------
+   gcc -o helloWorld helloWorld.c
+Alternatively you can compile the program using the attached Makefile. At the SCC prompt, type:
+   make
+
+
+Program Execution:
+------------------
+To execute the program, type at the SCC prompt:
+   ./helloWorld
+
+
+Contact Information:
+--------------------
+Robert Putnam: putnam@bu.edu
+
+Operating System Requirements:
+------------------------------
+   The examples presented in this directory were written for Linux OS, but should work on
+   any OS where a C compiler is available. The way the program is compiled and executed
+   depends on the OS and software used.  
+   
+

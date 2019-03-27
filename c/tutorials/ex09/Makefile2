@@ -1,0 +1,14 @@
+# Note: this makefile uses the more modern "pattern rule" syntax
+OBJECTS=dp.o dotprod.o
+INCLUDE_FILES=dp.h
+EXECUTABLE=dotprod
+
+.SUFFIXES:
+.SUFFIXES: .c .o
+%.o: %.c
+	gcc -c $<
+
+$(EXECUTABLE): $(OBJECTS)
+	gcc -o $@  $(OBJECTS)
+
+$(OBJECTS): $(INCLUDE_FILES)
