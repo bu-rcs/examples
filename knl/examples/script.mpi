@@ -1,0 +1,14 @@
+#!/bin/bash -l
+
+#$ -l h_rt=24:00:00
+#$ -l knl
+#$ -pe mpi_68_tasks_per_node 136
+#$ -N knl_mpi
+
+module purge
+module load intel/2017
+module use /share/module/knl
+module load openmpi/3.0.0_intel-2017_knl
+
+mpirun -np 136 ./pi_mpi
+
