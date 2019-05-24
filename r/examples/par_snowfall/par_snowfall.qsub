@@ -1,0 +1,23 @@
+#!/bin/bash -l
+
+# Set the time limit
+#$ -l h_rt=12:00:00
+#
+# Name the job
+#$ -N snow
+#
+# Send email when the job is done 
+#$ -m e
+#
+# Join the error and output streams
+#$ -j y
+#
+# Request parallel environment
+#$ -pe omp 4
+
+
+module load R
+
+# The environment variable NSLOTS (below) will be equal to the number of slots requested
+# with the "-pe omp" option above
+R -q --vanilla --args --parallel --cpus=$NSLOTS --type=SOCK < par_snowfall.R

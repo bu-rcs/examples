@@ -1,0 +1,14 @@
+#!/bin/bash -l
+
+#$-P krcs
+#$-l h_rt=12:00:00
+#$-j y
+#$-N markdown
+
+module load texlive/20150411
+module load pandoc/1.13.2.1
+module load R/3.5.2
+module load gcc/7.2.0
+
+Rscript -e 'rmarkdown::render("example.Rmd")'
+

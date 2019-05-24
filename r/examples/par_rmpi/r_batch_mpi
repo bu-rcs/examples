@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+#$ -N rmpi
+#$ -m e
+#$ -pe mpi_16_tasks_per_node 32 
+
+mpirun -np 1 R -q  --vanilla < hello_rmpi.R

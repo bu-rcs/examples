@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+#
+# -q option surpress "welcome R message"
+# --slave option surpress the listing of the R script into output file
+# --vanilla option surpress loading user-defined enviroment variables
+#
+
+R -q --slave --vanilla --args 10000 21.7 2.2 < args.R

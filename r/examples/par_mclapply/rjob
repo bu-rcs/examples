@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+#$ -pe omp 8
+#
+
+# after we requested 8 slots with omp 8 option, 
+# the variable NSLOTS is set to 8 and we can use it to pass the number
+# of cores to the R script
+Rscript mclapply.R $NSLOTS
