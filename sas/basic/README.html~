@@ -1,0 +1,45 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/examples.css">
+</head>
+<body>
+
+
+<h3>SCV sample SAS code </h3>
+This directory contains a simple "Hello, World!" SAS code.
+<br>
+<h4>Interactive execution:</h4>
+Start a <em>SAS</em> interactive session:<br>
+<code>scc1% sas &</code><br>
+In <em>SAS: Program Editor</em> window open <em>helloWorld.sas</em> program: <em>File -: Open</em>. To execute the program, select <em>Run</em> command in the menu. The output will be written into <em>Sas: Log</em> window. 
+<br>
+
+<h4>Interactive command line execution:</h4>
+Start a <em>SAS</em> command line interactive session:<br>
+<code>scc1% sas -nodms</code><br>
+Type in the following commands at the SAS prompt:<br>
+<code>&#62; put "Hello, World!";<br>
+&#62; proc product_status; run;
+</code><br>
+To exit SAS, type in the following command (notice the dot at the end of the command!):<br>
+<code>&#62; endsas;.</code>
+<br>
+
+<h4>Batch execution:</h4>
+At the SCC prompt execute:<br>
+<code>scc1% sas helloWorld.sas &</code><br>
+The output will be written into <em>helloWorld.log</em> file.
+<br>
+<h4>Submit SAS job:</h4>
+This directory contains a simple <em>SASjob</em> script that, when submitted to the batch system, will execute the <em>helloWorld.sas</em> script. To submit the job, type the following command at the SCC prompt:<br>
+<code>% qsub SASjob</code><br>
+Users who are members of any Medical Campus projects must also include their project group name:<br>
+<code>% qsub -P <i>scv</i> SASjob</code><br>
+
+<h4>Helpful Links:</h4>
+<a href="http://www.bu.edu/tech/about/research/training/scv-software-packages/sas-basics/"> SCV: SAS Basics </a><br>
+<a href="http://www.bu.edu/tech/about/research/computation/scc/running-jobs/"> Running Jobs on the SCC</a><br>
+
+
+</body>
+</html>

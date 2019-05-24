@@ -1,0 +1,270 @@
+1                                                          The SAS System                          13:37 Wednesday, October 10, 2018
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2) 
+      Licensed to BOSTON UNIVERSITY - SFA T&R, Site 70084216.
+NOTE: This session is executing on the Linux 2.6.32-696.28.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-696.28.1.el6.x86_64 #1 SMP Wed May 9 23:09:02 UTC 2018 x86_64 CentOS release 6.4 (Final) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           2.01 seconds
+      cpu time            0.04 seconds
+      
+1          /* A simple Hello World SAS program */
+2          
+3          /* Print Hello World */
+4          data _null_;
+5             put "Hello, World!";
+6          run;
+
+Hello, World!
+NOTE: DATA statement used (Total process time):
+      real time           0.34 seconds
+      cpu time            0.00 seconds
+      
+
+7          
+8          /* Output current version of SAS */
+9          proc product_status;
+10         run;
+2                                                          The SAS System                          13:37 Wednesday, October 10, 2018
+
+
+For Base SAS Software ...
+   Custom version information: 9.4_M2
+   Image version information: 9.04.01M2P072314
+For SAS/STAT ...
+   Custom version information: 13.2
+For SAS/GRAPH ...
+   Custom version information: 9.4_M2
+For SAS/ETS ...
+   Custom version information: 13.2
+For SAS/FSP ...
+   Custom version information: 9.4_M2
+For SAS/OR ...
+   Custom version information: 13.2
+For SAS/AF ...
+   Custom version information: 9.4_M2
+For SAS/IML ...
+   Custom version information: 13.2
+For SAS/QC ...
+   Custom version information: 13.2
+For SAS/SHARE ...
+   Custom version information: 9.4
+   Image version information: 9.04.01M0P061913
+For SAS/ASSIST ...
+   Custom version information: 9.4
+   Image version information: 9.04.01M0P061913
+For SAS/CONNECT ...
+   Custom version information: 9.4_M2
+For SAS/EIS ...
+   Custom version information: 9.4
+   Image version information: 9.04.01M0P061913
+For SAS/ACCESS Interface to Netezza ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS to Hadoop ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS to Vertica ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS to Postgres ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS Reserved Slot 565 ...
+   Custom version information: 9.41
+   Image version information: 9.04.01M0P072314
+For SAS Integration Technologies ...
+   Custom version information: 9.4_M2
+For SAS/Secure 168-bit ...
+   Custom version information: 9.4_M1
+For High Performance Suite ...
+   Custom version information: 2.2_M2
+   Image version information: 9.04.01M0P110514
+For SAS/ACCESS Interface to DB2 ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS Interface to Oracle ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS Interface to Sybase ...
+   Custom version information: 9.4_M1
+For SAS/ACCESS Interface to PC Files ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS Interface to ODBC ...
+3                                                          The SAS System                          13:37 Wednesday, October 10, 2018
+
+   Custom version information: 9.4_M2
+For SAS/ACCESS Interface to INFORMIX ...
+   Custom version information: 9.4
+   Image version information: 9.04.01M0P061913
+For SAS/ACCESS Interface to Teradata ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS Interface to Microsoft SQL Server ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS Interface to MySQL ...
+   Custom version information: 9.4_M2
+NOTE: PROCEDURE PRODUCT_STATUS used (Total process time):
+      real time           0.47 seconds
+      cpu time            0.01 seconds
+      
+
+11         
+12         /* Get license information */
+13         proc setinit noalias;
+14         run;
+
+NOTE: PROCEDURE SETINIT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+Original site validation data
+Site name:    'BOSTON UNIVERSITY - SFA T&R'.
+Site number:  70084216.
+Expiration:   14AUG2019.
+Grace Period:  45 days (ending 28SEP2019).
+Warning Period: 45 days (ending 12NOV2019).
+System birthday:   12JUL2018.
+Operating System:   LIN X64 .
+Product expiration dates:
+---Base SAS Software                                                                                    14AUG2019  
+---SAS/STAT                                                                                             14AUG2019  
+---SAS/GRAPH                                                                                            14AUG2019  
+---SAS/ETS                                                                                              14AUG2019  
+---SAS/FSP                                                                                              14AUG2019  
+---SAS/OR                                                                                               14AUG2019  
+---SAS/AF                                                                                               14AUG2019  
+---SAS/IML                                                                                              14AUG2019  
+---SAS/QC                                                                                               14AUG2019  
+---SAS/SHARE                                                                                            14AUG2019  
+---SAS/ASSIST                                                                                           14AUG2019  
+---SAS/CONNECT                                                                                          14AUG2019  
+---SAS/EIS                                                                                              14AUG2019  
+---SAS/SHARE*NET                                                                                        14AUG2019  
+---MDDB Server common products                                                                          14AUG2019  
+---SAS Integration Technologies                                                                         14AUG2019  
+---SAS/Secure 168-bit                                                                                   14AUG2019  
+---SAS Enterprise Guide                                                                                 14AUG2019  
+---SAS Bridge for ESRI                                                                                  14AUG2019  
+---OR OPT                                                                                               14AUG2019  
+---OR PRS                                                                                               14AUG2019  
+---OR IVS                                                                                               14AUG2019  
+---OR LSO                                                                                               14AUG2019  
+---SAS/ACCESS Interface to DB2                                                                          14AUG2019  
+---SAS/ACCESS Interface to Oracle                                                                       14AUG2019  
+4                                                          The SAS System                          13:37 Wednesday, October 10, 2018
+
+---SAS/ACCESS Interface to Sybase                                                                       14AUG2019  
+---SAS/ACCESS Interface to PC Files                                                                     14AUG2019  
+---SAS/ACCESS Interface to ODBC                                                                         14AUG2019  
+---SAS/ACCESS Interface to INFORMIX                                                                     14AUG2019  
+---SAS/ACCESS Interface to Teradata                                                                     14AUG2019  
+---SAS/ACCESS Interface to Microsoft SQL Server                                                         14AUG2019  
+---SAS/ACCESS Interface to MySQL                                                                        14AUG2019  
+---SAS/IML Studio                                                                                       14AUG2019  
+---SAS Workspace Server for Local Access                                                                14AUG2019  
+---SAS Workspace Server for Enterprise Access                                                           14AUG2019  
+---SAS/ACCESS Interface to Netezza                                                                      14AUG2019  
+---SAS/ACCESS Interface to Aster nCluster                                                               14AUG2019  
+---SAS/ACCESS Interface to Greenplum                                                                    14AUG2019  
+---SAS/ACCESS Interface to Sybase IQ                                                                    14AUG2019  
+---SAS/ACCESS to Hadoop                                                                                 14AUG2019  
+---SAS/ACCESS to Vertica                                                                                14AUG2019  
+---SAS/ACCESS to Postgres                                                                               14AUG2019  
+---SAS/ACCESS Reserved Slot 565                                                                         14AUG2019  
+---SAS/ACCESS Reserved Slot 567                                                                         14AUG2019  
+---SAS/ACCESS Reserved Slot 568                                                                         14AUG2019  
+---High Performance Suite                                                                               14AUG2019  
+---SAS/ACCESS to SAP HANA                                                                               14AUG2019  
+---PRODNUM964                                                                                           14AUG2019  
+
+15         
+16         /* Output total memory size default value */
+17         proc options option=MEMSIZE value;
+18         run;
+
+    SAS (r) Proprietary Software Release 9.4  TS1M2
+
+Option Value Information For SAS Option MEMSIZE
+    Value: 4294967296
+    Scope: SAS Session
+    How option value set: Config File
+    Config file name:
+            /share/pkg/sas/9.4/install/SASHome/SASFoundation/9.4/sasv9_local.cfg
+
+NOTE: PROCEDURE OPTIONS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+19         
+20         /* Output total sort size default value */
+21         proc options option=SORTSIZE value;
+22         run;
+
+    SAS (r) Proprietary Software Release 9.4  TS1M2
+
+Option Value Information For SAS Option SORTSIZE
+    Value: 2147483648
+    Scope: SAS Session
+    How option value set: Config File
+    Config file name:
+            /share/pkg/sas/9.4/install/SASHome/SASFoundation/9.4/sasv9_local.cfg
+
+NOTE: PROCEDURE OPTIONS used (Total process time):
+5                                                          The SAS System                          13:37 Wednesday, October 10, 2018
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+23         
+24         /* Output number of threads default value */
+25         proc options option=CPUCOUNT value;
+26         run;
+
+    SAS (r) Proprietary Software Release 9.4  TS1M2
+
+Option Value Information For SAS Option CPUCOUNT
+    Value: 1
+    Scope: SAS Session
+    How option value set: Config File
+    Config file name:
+            /share/pkg/sas/9.4/install/SASHome/SASFoundation/9.4/sasv9_local.cfg
+
+NOTE: PROCEDURE OPTIONS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           3.63 seconds
+      cpu time            0.07 seconds
+      
