@@ -1,3 +1,4 @@
 *.so
 *.RData
 Rprof.out
+./examples/optimization/SampleFile.csv
