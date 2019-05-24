@@ -1,0 +1,24 @@
+#!/bin/sh -l
+
+# Submit job with the command: qsub stata-mp.qsub
+
+# To view the status of the job: qstat -u username
+
+# Set the runtime limit (default 12 hours):
+#$ -l h_rt=12:00:00
+
+# Send email when the job is done (default: no email is sent)
+#$ -m e
+
+# Give the job a name (default: script name)
+#$ -N myjob
+
+# Combine output and error streams
+#$ -j y
+
+# Request 4 cores (stat-mp is multithreaded application and can use up to 4 cores)
+#$ -pe omp 4
+
+module load stata-mp/14
+stata-mp -b do helloWorld.do
+

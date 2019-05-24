@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# Submit job with the command: qsub Statajob
+#
+# To view the status of the job: qstat -u username
+#
+# Set the runtime limit (default 12 hours):
+#$ -l h_rt=04:00:00
+#
+# Send email when the job is done (default: no email is sent)
+#$ -m e
+#
+# Give the job a name (default: script name)
+#$ -N helloWorld
+#
+## end of qsub options
+
+echo "=========================================================="
+echo "Starting on : $(date)"
+echo "Running on node : $(hostname)"
+echo "Current directory : $(pwd)"
+echo "Current job ID : $JOB_ID"
+echo "Current job name : $JOB_NAME"
+echo "=========================================================="
+
+
+stata -b do helloWorld.do
+
+
+echo "  "
+echo "=========================================================="
+echo "Job $JOB_NAME finished on : $(date)"
+echo "=========================================================="
