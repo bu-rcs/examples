@@ -11,7 +11,7 @@ library(microbenchmark)
 # General form: DT[ i, j, by]
 #                   ^  ^  ^
 #                   |  |  |_____ grouped by what?
-#                   |  |____ whta to do
+#                   |  |____ what to do
 #                   |_____on which rows
 #
 # Take DT, subset rows using <i>, then calculate <j> grouped by <by>
