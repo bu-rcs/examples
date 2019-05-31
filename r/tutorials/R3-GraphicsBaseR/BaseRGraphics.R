@@ -193,7 +193,7 @@ plot( Bwt ~ Hwt, data = cats,
       pch = 16,
       col=colors[ cats$Sex ] )
 
-legend("topleft",col=colors[ unique(cats$Sex) ], pch=16, legend=levels(cats$Sex))
+legend("topleft",col=colors[ unique(cats$Sex) ], pch=16, legend=c("Female","Male"))
 
 abline(ln.res, lwd=2, lty=2)
 
@@ -229,10 +229,10 @@ par.save <- par( no.readonly=TRUE)
 par( bg = "lightgray", no.readonly=TRUE)
 
 pie( table(cats$Sex), 
-     labels = levels(cats$Sex), 
+     labels = c("Female","Male"), 
      col = c("brown", "steelblue") , 
      init.angle = 90, 
-     main = "Teaching Faculty")
+     main = "Cats")
 
 #restore background to original value 
 par(par.save)  
@@ -297,7 +297,7 @@ b<-barplot(cats.sex,
            col = colors,
            main = "Cats",
            sub = "R. A. Fisher (1947)",
-           names.arg = levels(cats$Sex), 
+           names.arg = c("Female","Male"), 
            ylim = c(0, max(cats.sex) * 1.1),
            axes = FALSE)
 
@@ -613,7 +613,9 @@ pairs(~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width,
 par( mfrow = c(1,2) )  # 1 row and 2 columns
 
 # first graph
-pie( ranks, labels = labels, col = mycol , init.angle = 90, main = "Teaching Faculty")
+ranks <- table(salaries$rank)
+labels <-c ("Associate Professor", "Assistant Professor", "Professor")
+pie( ranks, labels = labels, col = 2:4 , init.angle = 90, main = "Teaching Faculty")
 
 # second graph
 b<-barplot(table(salaries$rank),
