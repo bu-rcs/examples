@@ -5,10 +5,12 @@
 #$-j y
 #$-N markdown
 
-module load texlive/20150411
-module load pandoc/1.13.2.1
-module load R/3.5.2
-module load gcc/7.2.0
+module load texlive/2018
+module load pandoc/2.5
+module load R/3.6.0
 
+# The following command will convert the notebook to html
 Rscript -e 'rmarkdown::render("example.Rmd")'
 
+# THe following command will convert the notebook to pdf format
+Rscript -e 'rmarkdown::render(input="example.Rmd", output_format="pdf_document",output_file="example.pdf")'
