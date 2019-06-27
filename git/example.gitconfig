@@ -1,0 +1,15 @@
+[user]
+	email = username@bu.edu
+	name = Robert Brown
+[fetch]
+	prune = true
+[alias]
+   lg = log --graph --oneline --decorate --abbrev-commit
+   ll = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset'
+   lga = log --graph --oneline --decorate --all
+   loh = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+   lol = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --date=relative
+   lola = !git lol --all && 0
+   st = status -sb
+[core]
+	editor = nano
