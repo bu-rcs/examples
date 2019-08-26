@@ -17,6 +17,6 @@
 #$ -j y
 
 
-module load stata/14
+module load stata/16
 stata-mp -b do helloWorld.do myfile.csv 1000
 

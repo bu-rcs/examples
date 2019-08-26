@@ -26,7 +26,7 @@ echo "Current job ID : $JOB_ID"
 echo "Current job name : $JOB_NAME"
 echo "=========================================================="
 
-
+module load stata/16
 stata -b do helloWorld.do
 
 

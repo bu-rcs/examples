@@ -19,6 +19,6 @@
 # Request 4 cores (stat-mp is multithreaded application and can use up to 4 cores)
 #$ -pe omp 4
 
-module load stata-mp/14
+module load stata-mp/16
 stata-mp -b do helloWorld.do
 
