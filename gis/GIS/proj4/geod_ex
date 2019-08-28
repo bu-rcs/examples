@@ -1,3 +1,0 @@
-geod +ellps=clrk66 <<EOF -I +units=us-mi
-42d15'N 71d07'W 45d31'N 123d41'W
-EOF
