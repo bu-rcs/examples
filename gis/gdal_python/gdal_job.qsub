@@ -1,0 +1,28 @@
+#!/bin/bash -l
+
+# set up the time limit (default is 12 hours)
+#$ -l h_rt=12:00:00
+
+# give job a name
+#$ -N gdal_test
+
+# join outpout and error streams
+#$ -j y
+
+# send email once the job finishes
+#$ -m e
+
+# load gdal dependencies
+source /share/pkg/gdal/2.2.3/module_load_gdal_dependencies.sh
+
+# load gdal module
+module load gdal/2.2.3
+
+#load python
+module load python/2.7.13
+
+#execute the script
+python gdal_ex.py
+
+
+
