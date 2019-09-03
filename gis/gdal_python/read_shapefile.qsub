@@ -1,0 +1,10 @@
+#!/bin/bash -l
+
+module load python3/3.6.5
+module load gdal/2.3.2
+
+#execute the script
+python read_shapefile_ex.py
+
+
+
