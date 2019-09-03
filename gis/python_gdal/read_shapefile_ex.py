@@ -14,7 +14,7 @@ ogr.UseExceptions()
 driver = ogr.GetDriverByName("ESRI Shapefile")
 
 # Path to the shapefile
-shapefile='/projectnb/scv/milechin/git/examples/gis/python_gdal/data/cb_2014_us_county_5m.shp'
+shapefile='data/cb_2014_us_county_5m.shp'
 
 # Open the shapefile
 layer_conn = driver.Open(shapefile, 0)
