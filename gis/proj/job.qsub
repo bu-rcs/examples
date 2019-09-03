@@ -1,16 +1,8 @@
 #!/bin/bash -l
 
-# Specify project
-#$-P scv
-
-# Job Name
-#$-N gie_example
-
-# Merge output and error streams
-#$-j y
 
 #load module file
 module load proj4/5.1.0
 
-# Run command
-gie -vvvv gie_ex.gie
+# Run Proj command
+echo 55.2 12.2 | proj +proj=merc +lat_ts=56.5 +ellps=GRS80
