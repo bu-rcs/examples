@@ -25,7 +25,7 @@ This directory contains some simple examples of using the PROJ library on the SC
 <h4>Interactive execution:</h4>
 Load Proj module<br>
 <br>
-<code>geo % <b>module load proj4/5.1.0</b></code><br>
+<code>geo % <b>module load proj4/5.1.0</b></code><br><br>
 
 
 Simple commands to execute:<br><br>
