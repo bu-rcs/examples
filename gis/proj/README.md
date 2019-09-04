@@ -28,7 +28,7 @@ Load Proj module<br>
 <code>geo % <b>module load proj4/5.1.0</b></code><br>
 
 
-Simple commands to execute:
+Simple commands to execute:<br><br>
 <code>
    geo %  <b>echo 55.2 12.2 | proj +proj=merc +lat_ts=56.5 +ellps=GRS80</b><br>
    3399483.80      752085.60<br>
@@ -45,32 +45,37 @@ Simple commands to execute:
    <br>
 </code>
 
-Simple scripts to test tools available with Proj. (Based on these examples: <a href="https://proj.org/apps/index.html#apps">https://proj.org/apps/index.html#apps</a>) 
-<code>
+Simple scripts to test tools available with Proj. (Based on these examples: <a href="https://proj.org/apps/index.html#apps">https://proj.org/apps/index.html#apps</a>) <br><br>
 
-Test proj tool - source the "proj_ex" file in this directory to test the proj tool.<br>
-   geo % <b>source proj_ex</b><br>
+
+Test proj tool - source the "proj_ex" file in this directory to test the proj tool.<br><br>
+   <code>geo % <b>source proj_ex</b><br>
    460769.27       5011648.45<br>
    460769.27       5011648.45<br>
    460769.27       5011648.45<br>
    <br>
-Test cct tool<br>
+   </code>
+Test cct tool<br><br>
+<code>
    geo % <b>echo 12 55 | cct -z0 -t0 +proj=utm +zone=32 +ellps=GRS80</b><br>
    691875.6321   6098907.8250        0.0000        0.0000<br>
    <br>
-Test cs2cs tool<br>
-   geo % <b>source cs2cs_ex</b><br>
+</code>
+Test cs2cs tool<br><br>
+<code>   geo % <b>source cs2cs_ex</b><br>
    1402224.57      5076275.42 -0.00<br>
    1402224.57      5076275.42 -0.00<br>
    1402224.57      5076275.42 -0.00<br>
    <br>
-
-Test geod tool - source the "geod_ex" file in this directory to run the test.<br>
+</code>
+Test geod tool - source the "geod_ex" file in this directory to run the test.<br><br>
+<code>
    geo % <b>source geod_ex</b><br>
    -66d31'50.141"  75d39'13.083"   2587.504<br>
    <br>
-Test gie tool - use the "gie_ex.gie" file in this directory as the input for "gie" commmand.<br>
-   geo %<b> gie -vvvv gie_ex.gie</b><br>
+</code>
+Test gie tool - use the "gie_ex.gie" file in this directory as the input for "gie" commmand.<br><br>
+<code>   geo %<b> gie -vvvv gie_ex.gie</b><br>
    -------------------------------------------------------------------------------<br>
    Reading file 'gie_ex.gie'<br>
    -------------------------------------------------------------------------------<br>
