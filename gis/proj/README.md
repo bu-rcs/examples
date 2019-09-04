@@ -29,18 +29,17 @@ Load Proj module<br>
 
 
 Simple commands to execute:<br><br>
-<code>
-   geo %  <b>echo 55.2 12.2 | proj +proj=merc +lat_ts=56.5 +ellps=GRS80</b><br>
-   3399483.80      752085.60<br>
+<code>geo %  <b>echo 55.2 12.2 | proj +proj=merc +lat_ts=56.5 +ellps=GRS80</b></code><br>
+   <code>3399483.80      752085.60</code><br>
    <br>
-   geo % <b>echo 3399483.80 752085.60 | cs2cs +proj=merc +lat_ts=56.5 +ellps=GRS80 +to +proj=utm +zone=32</b><br>
-   6103992.36      1924052.47 0.00<br>
+   <code>geo % <b>echo 3399483.80 752085.60 | cs2cs +proj=merc +lat_ts=56.5 +ellps=GRS80 +to +proj=utm +zone=32</b></code><br>
+   <code>6103992.36      1924052.47 0.00</code><br>
    <br>
-   geo % <b>echo 56 12 | cs2cs +init=epsg:4326 +to +init=epsg:25832</b><br>
-   6231950.54      1920310.71 0.00<br>
+   <code>geo % <b>echo 56 12 | cs2cs +init=epsg:4326 +to +init=epsg:25832</b></code><br>
+   <code>6231950.54      1920310.71 0.00</code><br>
    <br>
-   geo % <b>echo 0.0 | cs2cs +proj=latlong +datum=WGS84 +to +proj=latlong +datum=WGS84 +pm=madrid</b><br>
-   3d41'16.58"E    0dN 0.000<br>
+   <code>geo % <b>echo 0.0 | cs2cs +proj=latlong +datum=WGS84 +to +proj=latlong +datum=WGS84 +pm=madrid</b></code><br>
+   <code>3d41'16.58"E    0dN 0.000</code><br>
    <br>
    <br>
 </code>
@@ -49,12 +48,11 @@ Simple scripts to test tools available with Proj. (Based on these examples: <a h
 
 
 Test proj tool - source the "proj_ex" file in this directory to test the proj tool.<br><br>
-   <code>geo % <b>source proj_ex</b><br>
-   460769.27       5011648.45<br>
-   460769.27       5011648.45<br>
-   460769.27       5011648.45<br>
+   <code>geo % <b>source proj_ex</b></code><br>
+   <code>460769.27       5011648.45</code><br>
+   <code>460769.27       5011648.45</code><br>
+   <code>460769.27       5011648.45</code><br>
    <br>
-   </code>
 Test cct tool<br><br>
 <code>geo % <b>echo 12 55 | cct -z0 -t0 +proj=utm +zone=32 +ellps=GRS80</b></code><br>
 <code>691875.6321   6098907.8250        0.0000        0.0000</code><br>
