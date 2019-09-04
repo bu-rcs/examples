@@ -10,15 +10,15 @@
 
 <ul>
 <li><b>arcgis</b> - Supporting material for "Arcgis Basics" tutorial. </li>
-<li><b>gdal_python</b> - Example of running Python GDAL on the SCC.</li>
-<li><b>llvm</b> - Example of running llvm on the SCC.</li>
+<li><b>python_gdal</b> - Example of running Python GDAL on the SCC.</li>
 <li><b>proj</b> - Example of running proj on the SCC.</li>
-<li><b>rgdal</b> - Example of running rgdal on the SCC.</li>
+<li><b>R_rgdal</b> - Example of running rgdal on the SCC.</li>
 </ul>
+
 	
 <h4>Usage notes</h4>
    
-Each directory contains a Readme file with detailed instructions.
+Each directory contains a README file with detailed instructions.
 <br>
 
 <h4>Contact Information</h4>

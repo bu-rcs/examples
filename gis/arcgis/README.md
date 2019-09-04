@@ -10,7 +10,7 @@
 
 <ul>
 <li><b>hands_on.pdf</b> - Step by step instructions on how to create a map showing the Boston Subway lines. </li>
-<li><b>summer_2019_arcgis_basics.pptx</b> - Powerpoint presentation.</li>
+<li><b>arcgis_basics.pptx</b> - Powerpoint presentation.</li>
 <li><b>tutorial_files.zip</b> - ZIP file containing Shapefiles and CSV file used in the `hands_on.pdf` document.</li>
 </ul>
 
