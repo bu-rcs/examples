@@ -56,48 +56,43 @@ Test proj tool - source the "proj_ex" file in this directory to test the proj to
    <br>
    </code>
 Test cct tool<br><br>
-<code>
-   geo % <b>echo 12 55 | cct -z0 -t0 +proj=utm +zone=32 +ellps=GRS80</b><br>
-   691875.6321   6098907.8250        0.0000        0.0000<br>
+<code>geo % <b>echo 12 55 | cct -z0 -t0 +proj=utm +zone=32 +ellps=GRS80</b></code><br>
+<code>691875.6321   6098907.8250        0.0000        0.0000</code><br>
    <br>
-</code>
+
 Test cs2cs tool<br><br>
-<code>   geo % <b>source cs2cs_ex</b><br>
-   1402224.57      5076275.42 -0.00<br>
-   1402224.57      5076275.42 -0.00<br>
-   1402224.57      5076275.42 -0.00<br>
+<code>geo % <b>source cs2cs_ex</b></code><br>
+<code>1402224.57      5076275.42 -0.00</code><br>
+<code>1402224.57      5076275.42 -0.00</code><br>
+<code>1402224.57      5076275.42 -0.00</code><br>
    <br>
-</code>
 Test geod tool - source the "geod_ex" file in this directory to run the test.<br><br>
-<code>
-   geo % <b>source geod_ex</b><br>
-   -66d31'50.141"  75d39'13.083"   2587.504<br>
-   <br>
-</code>
+<code>geo % <b>source geod_ex</b></code><br>
+<code>-66d31'50.141"  75d39'13.083"   2587.504</code><br>
+
 Test gie tool - use the "gie_ex.gie" file in this directory as the input for "gie" commmand.<br><br>
-<code>   geo %<b> gie -vvvv gie_ex.gie</b><br>
-   -------------------------------------------------------------------------------<br>
-   Reading file 'gie_ex.gie'<br>
-   -------------------------------------------------------------------------------<br>
-   proj=utm zone=32 ellps=GRS80<br>
-     12 55<br>
-   NOT INVERTED<br>
-   forward<br>
-   angular in<br>
-   linear out<br>
-   left: 4   right:  1<br>
-   EXPECTS  691875.632140000002  6098907.825050000101  0.000000000000  0.000000000000<br>
-   ACCEPTS  0.209439510239  0.959931088597  0.000000000000  0.000000000000<br>
-   GOT      691875.632139660651  6098907.825005011633  0.000000000000  0.000000000000<br>
-   -------------------------------------------------------------------------------<br>
-   total:  1 tests succeeded,  0 tests skipped,  0 tests failed.<br>
-   -------------------------------------------------------------------------------<br>
-   Failing roundtrips:    0,    Succeeding roundtrips:    0<br>
-   Failing failures:      0,    Succeeding failures:      0<br>
-   Failing builtins:      0,    Succeeding builtins:      0<br>
-   Internal counters:                            0001(0001)<br>
-   -------------------------------------------------------------------------------<br>
-</code>
+<code>geo %<b> gie -vvvv gie_ex.gie</b></code><br>
+<code>-------------------------------------------------------------------------------</code><br>
+<code>Reading file 'gie_ex.gie'</code><br>
+<code>-------------------------------------------------------------------------------</code><br>
+<code>proj=utm zone=32 ellps=GRS80</code><br>
+<code># 12 55</code><br>
+<code>NOT INVERTED</code><br>
+<code>forward</code><br>
+<code>angular in</code><br>
+<code>linear out</code><br>
+<code>left: 4   right:  1</code><br>
+<code>EXPECTS  691875.632140000002  6098907.825050000101  0.000000000000  0.000000000000</code><br>
+<code>ACCEPTS  0.209439510239  0.959931088597  0.000000000000  0.000000000000</code><br>
+<code>GOT      691875.632139660651  6098907.825005011633  0.000000000000  0.000000000000</code><br>
+<code>-------------------------------------------------------------------------------</code><br>
+<code>total:  1 tests succeeded,  0 tests skipped,  0 tests failed.</code><br>
+<code>-------------------------------------------------------------------------------</code><br>
+<code>Failing roundtrips:    0,    Succeeding roundtrips:    0</code><br>
+<code>Failing failures:      0,    Succeeding failures:      0</code><br>
+<code>Failing builtins:      0,    Succeeding builtins:      0</code><br>
+<code>Internal counters:                            0001(0001)</code><br>
+<code>-------------------------------------------------------------------------------</code><br>
 
 <h3> Submit PROJ job </h3>
 A sample batch script to submit a job running proj commands can be found in this directory. TO submit a job, run:<br>
