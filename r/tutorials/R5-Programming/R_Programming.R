@@ -1,8 +1,8 @@
 ## -------------------------------------------- ##
 ##
 ##   Programming in R
-##   v1.1
-##   May 24, 2019 
+##   v1.2
+##   Sept. 12, 2019 
 ##
 ##   Research Computing Services
 ##   Dennis Milechin
@@ -40,7 +40,7 @@ for(val in x){
 
 
 
-#========  1.2 Loop through List =======
+#========  1.2 LOOP THROUGH NAMED VECTOR =======
 
 
 rm(list=ls())  # Removes are variables, so we start with a fresh global environment
@@ -135,7 +135,7 @@ for(val in applicants$credit_score){
 # We would like to loop through the datatable by row
 applicants
 
-# We can use column name and row indext to extract certain values
+# We can use column name and row index to extract values of interest
 applicants$has_job[1]
 applicants$credit_score[1]
 
@@ -407,7 +407,7 @@ print(result)
 #========  2.5 PRACTICE: Nested IF-ELSE Statement  =======
 
 
-# Let's practice. We have to data inputs for an applicant applying for a car loan:
+# Let's practice. We have two data inputs for an applicant applying for a car loan:
 #   `has_job` --> boolean if person has a job or not
 #   `credit_score` --> The credit score of the applicant.
 #
@@ -525,7 +525,9 @@ for(val in x){
 
 
 
+# Vectorized approach
 
+result <- x[x > 5]
 
 
 
@@ -569,6 +571,19 @@ for(row in 1:nrow(applicants)){
   
   score <- applicants$credit_score[row]
   has_job <- applicants$has_job[row]
+  
+  
+  
+  ###   --> 
+  #   YOUR CODE
+  
+  
+  
+  
+  
+  ##   <--
+  
+  applicants$approved[row] <- approved
   
 }
 
