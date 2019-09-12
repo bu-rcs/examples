@@ -1,0 +1,8 @@
+#!/bin/bash -l
+
+
+#load module file
+module load proj4/5.1.0
+
+# Run Proj command
+echo 55.2 12.2 | proj +proj=merc +lat_ts=56.5 +ellps=GRS80

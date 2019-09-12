@@ -1,0 +1,5 @@
+#!/bin/bash -l
+
+module load R/3.6.0
+
+Rscript reading_shapefile_ex.R
