@@ -1,8 +1,8 @@
 ## -------------------------------------------- ##
 ##
 ##   Programming in R
-##   v1.2
-##   Sept. 12, 2019 
+##   v1.3
+##   Sept. 24, 2019 
 ##
 ##   Research Computing Services
 ##   Dennis Milechin
@@ -43,7 +43,7 @@ for(val in x){
 #========  1.2 LOOP THROUGH NAMED VECTOR =======
 
 
-rm(list=ls())  # Removes are variables, so we start with a fresh global environment
+rm(list=ls())  # Removes are variables, so we start with a fresh environment
 
 y <- c("Name"="Dennis", "Age"=20)
 
@@ -150,9 +150,11 @@ nrow(applicants)
 # Loop through by row
 for(row in 1:nrow(applicants)){
   
+  # Extract data for row
   score <- applicants$credit_score[row]
   has_job <- applicants$has_job[row]
   
+  # Print values
   print(paste("Row Number: ", row))
   print(paste("Credit Score is: ", score))
   print(paste("Applicant has job? ", has_job))
@@ -161,13 +163,125 @@ for(row in 1:nrow(applicants)){
 
 
 
+#========  1.5 Get Average Credit Score =======
+
+rm(list=ls())
+
+# Define dataframe
+applicants <- data.frame(has_job=c(TRUE, FALSE, FALSE, TRUE, TRUE), credit_score=c(300, 250, 750, 600, 150))
+
+# Define variables for tracking values
+credit_score_sum <- 0
+has_job_sum <- 0
+applicant_count <- nrow(applicants)
+
+# Loop through by row
+for(row in 1:applicant_count){
+  
+  # Extract data for row
+  score <- applicants$credit_score[row]
+  has_job <- applicants$has_job[row]
+  
+  # add score to credit_score_sum
+  credit_score_sum <- credit_score_sum + score
+  
+  # add has_job to has_job_sum 
+  #  Note - boolean have numerical equivalent values: 
+  #                     FALSE = 0 and TRUE = 1
+  has_job_sum <- has_job_sum + has_job
+}
+
+# Divide the sum by number of applicants to get the mean
+credit_score_mean <- credit_score_sum/applicant_count
+
+# Divide has_job_sum by applicant count and multiply by 100 to get percent.
+has_job_perc <- has_job_sum/applicant_count*100
+
+# Print results.
+cat(
+    "Mean credit score is :", credit_score_mean, "\n",
+    "% of applicants have a job :", has_job_perc, "%"
+  )
 
 
 
 
 
 
-#========  1.5 Nested Loops =======
+
+
+
+
+
+# Vectorized Solution 1:
+
+rm(list=ls())
+
+
+# Define dataframe
+applicants <- data.frame(has_job=c(TRUE, FALSE, FALSE, TRUE, TRUE), credit_score=c(300, 250, 750, 600, 150))
+
+# Get the mean of credit_score column
+credit_score_mean <- mean(applicants$credit_score)
+
+# Get percent of applicants have job
+perc_has_job <- mean(applicants$has_job)*100
+
+# Print results.
+cat(
+  "Mean credit score is :", credit_score_mean, "\n",
+  "% of applicants have job :", perc_has_job, "%"
+  )
+
+
+
+
+
+
+
+
+
+
+
+# Vectorized Solution 2: Using apply function
+
+#   apply(X, MARGIN, FUN, .)
+#
+#    Arguments:
+#      X: an array, including a matrix.
+#      MARGIN: a vector giving the subscripts which the function will be applied over. 
+#             E.g., for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates 
+#             rows and columns. Where X has named dimnames, it can be a character vector 
+#             selecting dimension names.
+#      FUN: the function to be applied
+
+
+# Get the mean value by column
+apply(applicants, 2, mean)
+
+# Can easily update to get max
+apply(applicants, 2, max)
+
+
+
+# For information at:
+#     https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/apply
+#     https://www.r-bloggers.com/r-tutorial-on-the-apply-family-of-functions/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#========  1.6 Nested Loops =======
 
 
 rm(list=ls())
@@ -199,7 +313,7 @@ print(z)
 
 
 
-#========  1.6 Loops to Explore =======
+#========  1.7 Loops to Explore =======
 
 # Other things to explore that we won't cover in this tutorial
 
@@ -263,8 +377,10 @@ y != 'hello'
 
 rm(list=ls())
 
-if(TRUE){
-  print("This is TRUE.")
+x <- TRUE
+
+if(x == TRUE){
+  print("The value of X is TRUE.")
 }
 
 
@@ -318,24 +434,27 @@ x <- FALSE
 # IF-ELSE
 if(x == TRUE){
   
-  print("X is True!")
+  print("The value of X is TRUE!")
   
 }else {   
   
-  print("X is False!")
+  print("The value of X is not TRUE!")
   
 }
 
+
+
+x <- FALSE
 
 # IF-ELSE-IF
 
 if(x == TRUE){
   
-  print("X is True!")
+  print("The value of X is TRUE!")
   
 }else if(x == FALSE){
   
-  print("X is False!")
+  print("The value of X is FALSE")
   
 }else{
   
@@ -376,15 +495,15 @@ result <- NULL
 if(x == TRUE){
   
   if(y == TRUE){
-    result <- "X and Y are True."
+    result <- "The value of x and y is TRUE."
   }
   else{
-    result <- "X is True, Y is False."
+    result <- "The value of x is TRUE, but the value of y is FALSE."
   }
 
 }else{
   
-  result <- "X is False."
+  result <- "The value of x is not TRUE. The value of y is unknown."
   
 }
 
@@ -543,7 +662,7 @@ result <- x[x > 5]
 
 
 
-#========  2.8 IF-Else with DataFrame  =======
+#========  2.7 IF-Else with DataFrame  =======
 
 
 # Let's practice.  Below is a dataframe defined with multiple entries for applicants.  
@@ -611,7 +730,7 @@ for(row in 1:nrow(applicants)){
 
 
 
-## ## START: SOLUTION: 2.8 ## ##
+## ## START: SOLUTION: 2.7 ## ##
 
 for(row in 1:nrow(applicants)){
   
@@ -644,7 +763,7 @@ for(row in 1:nrow(applicants)){
 
 head(applicants)
 
-## ## END: SOLUTION: 2.8 ## ##
+## ## END: SOLUTION: 2.7 ## ##
 
 
 
@@ -678,6 +797,121 @@ head(applicants)
 #   `||`	Logical OR (only tests the first element)
 
 # Learn more at: https://www.datamentor.io/r-programming/operator/#logical_operators
+
+
+
+
+
+
+
+
+
+
+
+
+
+#========  2.8 Mean Credit Score group by "Has Job"  =======
+
+rm(list=ls())
+
+
+applicants <- data.frame(has_job=c(TRUE, FALSE, FALSE, TRUE, TRUE), credit_score=c(300, 250, 750, 600, 150))
+
+credit_score_sum <- 0
+has_job_sum <- 0
+applicant_count <- nrow(applicants)
+
+credit_sum_has_job <- 0
+credit_sum_no_job <- 0
+
+has_job_count <- 0
+has_no_job_count <- 0
+
+
+# Loop through by row
+for(row in 1:applicant_count){
+  
+  # Extract data from dataframe
+  score <- applicants$credit_score[row]
+  has_job <- applicants$has_job[row]
+  
+  # Check if has_job is TRUE
+  if(has_job == TRUE){
+    
+      # Accumulate the count and sum
+      has_job_count <- has_job_count + 1
+      credit_sum_has_job <-  credit_sum_has_job + score
+    
+  } else {
+    
+      # Accumulate the count and sum
+      has_no_job_count <- has_no_job_count + 1
+      credit_sum_no_job <- credit_sum_no_job + score
+    
+  }
+  
+
+}
+
+
+# Make sure the count of has_job_count is greater than 0
+# because for mean, we cannot divide by 0.
+if(has_job_count > 0){
+  
+  # Calculate the mean credit score for applicants with jobs
+  mean_credit_has_job <- credit_sum_has_job/has_job_count
+  
+} else{
+  
+  # If 0, then set the mean to NULL.
+  mean_credit_has_job <- "Cannot compute, has_job_count is 0."
+  
+}
+
+# Make sure the count of has_no_job_count is greater than 0
+# because for mean, we cannot divide by 0.
+if(has_no_job_count > 0){
+  
+  # Calculate the mean credit score for applicants with jobs
+  mean_credit_has_no_job <- credit_sum_no_job/has_no_job_count
+  
+} else {
+  
+  mean_credit_has_no_job <- "Cannot compute, has_no_job_count is 0."
+  
+}
+
+# Print results.
+
+cat("Mean credit score for:\n", 
+        
+        "\t", "Has_Job is FALSE: ", mean_credit_has_no_job, "\n",
+        "\t", "Has_Job is TRUE: ", mean_credit_has_job
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+# Using tapply:
+
+# tapply(<vector>, <factor list>, <function>)
+
+tapply(applicants$credit_score, applicants$has_job, mean)
+  
+
+
+
+# For information at:
+#     https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/tapply
+#     https://www.r-bloggers.com/r-tutorial-on-the-apply-family-of-functions/
 
 
 
@@ -929,118 +1163,35 @@ print(paste("Application approved?" , result))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#========  3.7 Global versus Local =======
-
-rm(list=ls())
-
-# Knowing which variables are global and local is important. 
-
-
-check <- function(param1){
-
-  print(paste("IN FUNCTION `param1` = ",param1))
-  
-  #print(paste("IN FUNCTION `num2` = ", num2))
-  
-  #print(paste("IN FUNCTION `num3` = ", num3))
-  
-  #num3 <- 3 + 1
-  
-  #print(paste("IN FUNCTION `num3` = ", num3))
-  
-  #param1 <- 4
-  
-  
-  
-}
-
-
-num1 <- 1
-num2 <- 2
-num3 <- 3
-
-# Execute function
-check(num1)
-
-#print(paste("OUTSIDE `num1` = ", num1))
-
-#print(paste("OUTSIDE `num2` = ", num2))
-
-#print(paste("OUTSIDE `num3` = ", num3))    
-
-#print(paste("OUTSIDE `param1` = ", param1)) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-####__________________________________________________####
-######### SECTION 4:  APPLY FUNCTIONS ####################
-
-# The Apply functions allows one to apply an existing or custom functions efficiently
-# to a matrix and vector.
-
 rm(list=ls())
 
 applicants <- data.frame(has_job=c(TRUE, FALSE, FALSE, TRUE, TRUE), credit_score=c(300, 250, 750, 600, 150))
 
 head(applicants)
 
-# Apply functions by rows
-apply(applicants, 1, mean)
-apply(applicants, 1, max)
-
-# Apply functions by columns
-apply(applicants, 2, mean)
-apply(applicants, 2, max)
-
-# Apply functions by element
-apply(applicants, 1:2, mean)
-apply(applicants, 1:2, max)
-
-
-#  lapply function applies to each list and returns a list as an output
-lapply(applicants, max)
-
-#  sapply function acts like lapply, but returns a vector instead.
-sapply(applicants, max)
-
-
-#  tapply allows you to group by a field and apply a function to another column as a summary.
-tapply(applicants$credit_score, applicants$has_job, mean)
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+#========  3.7 Using mapply =======
+
+rm(list=ls())
+
+applicants <- data.frame(has_job=c(TRUE, FALSE, FALSE, TRUE, TRUE), credit_score=c(300, 250, 750, 600, 150))
 
 #  mapply
 mapply(sum, applicants$has_job, applicants$credit_score)
@@ -1088,8 +1239,61 @@ head(applicants)
 
 
 
+
+
+
+
+#========  3.8 Global versus Local =======
+
+rm(list=ls())
+
+# Knowing which variables are global and local is important. 
+
+
+check <- function(param1){
+
+  print(paste("IN FUNCTION `param1` = ",param1))
+  
+  #print(paste("IN FUNCTION `num2` = ", num2))
+  
+  #print(paste("IN FUNCTION `num3` = ", num3))
+  
+  #num3 <- 3 + 1
+  
+  #print(paste("IN FUNCTION `num3` = ", num3))
+  
+  #param1 <- 4
+  
+  
+  
+}
+
+
+num1 <- 1
+num2 <- 2
+num3 <- 3
+
+# Execute function
+check(num1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ####__________________________________________________####
-######### SECTION 5:SOURCE ##############
+######### SECTION 4: SOURCING ##############
 
 # We can save our function in an R Script and then import it into another function.
 # This can be helpful when working with a team of developers.
@@ -1098,7 +1302,7 @@ head(applicants)
 
 # Copy the function we created into a new R Script File, app_check.R:
 
-app_check <- function(job, score){
+app_check_v2 <- function(job, score){
   
   if(job == TRUE){
     
@@ -1116,11 +1320,13 @@ app_check <- function(job, score){
   return(approved)
 }
 
+# save the file as "app_check.R" in your current working directory
 
 # Clear your environment
 rm(list=ls())
 
-# Let's source the app_check R file
+
+# source the app_check R file
 source("app_check.R")
 
 # Now we should be able to use the function
@@ -1128,13 +1334,16 @@ source("app_check.R")
 has_job <- TRUE
 credit_score <- 700
 
-result <- app_check(has_job, credit_score)
+result <- app_check_v2(has_job, credit_score)
 
 print(result)
 
 
 
 
+
+####__________________________________________________####
+######### PLEASE FILL OUT EVALUATION FORM ##############
 ## PLEASE FILL OUT EVALUATION FORM ##
 # http://scv.bu.edu/survey/tutorial_evaluation.html
 
