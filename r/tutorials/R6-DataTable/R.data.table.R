@@ -209,11 +209,6 @@ dt[diastBP %between% c(60,70) ]
 # Traditional base R approach
 dt[diastBP >= 60 & diastBP <= 70 ]
 
-#--------
-# %chin% - for character vectors 
-#--------
-iris.dt[Species %chin% c("setosa", "versicolor")]
-
 
 #-------------------------------------------#
 #         Selecting columns
