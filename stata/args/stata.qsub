@@ -18,5 +18,5 @@
 
 
 module load stata/16
-stata-mp -b do helloWorld.do myfile.csv 1000
+stata -b do helloWorld.do myfile.csv 1000
 

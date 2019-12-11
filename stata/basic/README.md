@@ -9,6 +9,7 @@ This directory contains a simple "Hello, World!" Stata script.
 <br>
 <h4>Interactive execution:</h4>
 Start an Interactive Stata sessions by typing <em>xstata</em> at the SCC prompt:<br>
+<code>scc1% module load stata/16</code><br>
 <code>scc1% xstata</code><br>
 In the File menu, select Do and chose helloWorld.do file.<br>
 
