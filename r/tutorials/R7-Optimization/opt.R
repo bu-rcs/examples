@@ -168,26 +168,9 @@ microbenchmark(
   A %*% B %*% v, 
   A %*% (B %*% v) )
 
-# ----- A few other optimizied functions for matricies-----
-A <- matrix(rnorm(10000), nrow = 100)
-B <- matrix(rnorm(10000), nrow = 100)
-v <- rnorm(100)
-w <- rnorm(100)
-
-microbenchmark(
-  t(A) %*% A, 
-  crossprod(A) )
-
-
-microbenchmark(
-  t(A) %*% v, 
-  crossprod(A,v) )
-
-
-microbenchmark(
-  v %*% t(w), 
-  tcrossprod(v,w) )
-
+# A few other optimized functions for matricies:
+# - crossprod()
+# - tcrossprod()
 
 
 
@@ -217,14 +200,6 @@ microbenchmark(
   rowSums(matr) )
 
 
-# Compare apply(,2,FUN = mean) with colMeans()
-matr <- matrix(runif(10000000),nrow=100) 
-microbenchmark( 
-  apply(matr, 2, mean),
-  colMeans(matr),
-  times=2 
-)
-
 #With the dataframe
 data <- as.data.frame( matr )
 microbenchmark( 
@@ -253,7 +228,6 @@ microbenchmark(
   "[50, 3]" = df[50,3],
   "$V3[50]" = df$V3[50]
 )
-
 
 
 

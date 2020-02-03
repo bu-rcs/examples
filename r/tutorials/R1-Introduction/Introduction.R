@@ -1,7 +1,7 @@
 # ---------------------------------------#
 #                                        #
 #  R script for RCS tutorial             #
-#  Katia Oleinik                         #
+#  Katia Bulekova                        #
 # ---------------------------------------#
 
 # R as a scientific calculator
