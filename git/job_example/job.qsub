@@ -1,8 +1,0 @@
-#!/bin/bash -l
-
-#$ -j y
-#$ -N example
-
-module load python3
-
-python example.py
