@@ -9,7 +9,8 @@
 <h4>Directory Structure</h4>
 
 <ul>
-<li><b>arcgis</b> - Supporting material for "Arcgis Basics" tutorial. </li>
+<li><b>arcgis</b> - Supporting material for "Basics of ArcGIS Pro" tutorial. </li>
+<li><b>arcgis_online</b> - Supporting material for "Introduction to Arcgis Online" tutorial. </li>
 <li><b>python_gdal</b> - Example of running Python GDAL on the SCC.</li>
 <li><b>proj</b> - Example of running proj on the SCC.</li>
 <li><b>R_rgdal</b> - Example of running rgdal on the SCC.</li>
